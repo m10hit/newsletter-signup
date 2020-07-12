@@ -1,12 +1,15 @@
-# newsletter-signup
-📰 A simple newsletter signup page to allow users to add themselves in the mailing list to receive monthly emails on new tech. Used Mailchimp API to achieve it along with HTML5, CSS3, Bootstrap, Node.js and Express.js
+# Newsletter Signup
+📰 A simple newsletter signup page to allow users to add themselves in the mailing list to receive monthly emails on new tech.
 
 # Idea
 * Sending monthly emails to the users who have signed up for the newsletter to send them news and updates on new tools and technologies
 * Using Mailchimp services to store and manage the emails of the users along with other details
 
+# Tools Used
+* Used HTML5, CSS3, Bootstrap, Node.js, Express.js and JavaScript to develop the page
+
 # API
-* Using the Mailchimp's API
+* Used the Mailchimp's API
 
 # How to sign up
 * On the home page, the user can see a simple UI to sign up
