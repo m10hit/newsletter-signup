@@ -13,6 +13,7 @@
 * All the fields are mandatory
 * When user fills up all the fields, the sign up button can be clicked
 * If successful, user is taken to a success page, else a failure page is displayed
+* When something goes wrong and failure page is displayed, user can click on **Try Again** button to go back to the sign up home page.
 
 # After sign up
 * User's data gets added on the mailchimp's server
