@@ -3,6 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
+const https = require("https");
 
 const app = express();
 
@@ -33,25 +34,45 @@ app.post("/",function(req,res){
   };
 
   var jsonData = JSON.stringify(data);
+  const url = 'https://us4.api.mailchimp.com/3.0/lists/59822c7639';
 
-  var options = {
-    url:'https://us4.api.mailchimp.com/3.0/lists/59822c7639',
+  const options={
     method:"POST",
-    headers:{
-      "Authorization": "mohit1 dc385f49848a39ee2c26d8f48443052d-us4"
-    },
-    body: jsonData
-  }
+    auth:"m10hit:dc385f49848a39ee2c26d8f48443052d-us4"
+  };
 
-  request(options, function(error,response,body){
-    if (error || response.statusCode !== 200){
-      res.sendFile(__dirname + "/failure.html");
-    }
-    else if(response.statusCode === 200){
-      res.sendFile(__dirname + "/success.html");
-    }
-  })
-})
+  const request = https.request(url,options,function(response){
+    response.on("data",function(data){
+      sub_data = JSON.parse(data)
+      if(response.statusCode !== 200){
+        res.sendFile(__dirname+"/failure.html")
+      }else{
+        res.sendFile(__dirname+"/success.html")
+      }
+    });
+  });
+
+  request.write(jsonData);
+  request.end();
+
+  // var options = {
+  //   url:'https://us4.api.mailchimp.com/3.0/lists/59822c7639',
+  //   method:"POST",
+  //   headers:{
+  //     "Authorization": "mohit1 dc385f49848a39ee2c26d8f48443052d-us4"
+  //   },
+  //   body: jsonData
+  // }
+  //
+  // request(options, function(error,response,body){
+  //   if (error || response.statusCode !== 200){
+  //     res.sendFile(__dirname + "/failure.html");
+  //   }
+  //   else if(response.statusCode === 200){
+  //     res.sendFile(__dirname + "/success.html");
+  //   }
+  // })
+});
 
 app.post("/failure",function(req,res){
   res.redirect("/");
