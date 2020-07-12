@@ -21,3 +21,14 @@
 # After sign up
 * User's data gets added on the mailchimp's server
 * The data can be used to send monthly emails
+
+# Screenshots
+![](images/home-page.png)
+
+![](images/mandatory-fields.png)
+
+![](images/user-enter-details.png)
+
+![](images/success-page.png)
+
+![](images/failure-page.png)
