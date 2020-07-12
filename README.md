@@ -24,7 +24,11 @@
 
 # Screenshots
 ![](images/home-page.png)
+
 ![](images/mandatory-fields.png)
+
 ![](images/user-enter-details.png)
+
 ![](images/success-page.png)
+
 ![](images/failure-page.png)
