@@ -31,4 +31,6 @@
 
 ![](images/success-page.png)
 
+![](images/mailchimp.png)
+
 ![](images/failure-page.png)
